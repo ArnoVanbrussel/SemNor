@@ -104,7 +104,7 @@
 - New language: Information Processing Language (IPL)
 - Only well-defined problems
 
-## 1.9 Solving a problem with GPS
+## 1.9 Solving a problem with GPS (p.14)
 1. Define goals: 
 	1. e.g.: get milk from store
 2. Define preconditions: 
@@ -114,5 +114,7 @@
 	1. if transportation is car and fuel is low => need to be able to pay petrol station
 	2. also pay for milk
 
-## Building an intelligent agent
+## 1.10 Building an intelligent agent (p.14)
+- Data & Training
+![How an intelligent agent interacts with its environment](obsidian://open?vault=Sem1&file=SemNor%2FIntelligent%20agent%20-%20environment.canvas)
 
