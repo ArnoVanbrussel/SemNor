@@ -124,3 +124,4 @@
 - Learned models
 	- Training
 	- Many examples of in-/outputs
+# 2 Fundamental Use Cases for AI (p.23)
