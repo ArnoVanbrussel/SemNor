@@ -116,5 +116,11 @@
 
 ## 1.10 Building an intelligent agent (p.14)
 - Data & Training
-![How an intelligent agent interacts with its environment](obsidian://open?vault=Sem1&file=SemNor%2FIntelligent%20agent%20-%20environment.canvas)
-
+- Intelligent agent interaction with its environment:
+![[Pasted image 20240807202612.png]]
+## 1.11 Types of models
+- Analytical models
+	- Derived using mathematical formulation
+- Learned models
+	- Training
+	- Many examples of in-/outputs
