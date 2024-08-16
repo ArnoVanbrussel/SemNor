@@ -146,3 +146,9 @@
 	- Generate ideas for your startup project
 - Part two:
 	- Evaluate the ideas (homework)
+
+### Before next lecture
+- Groups of 3-4
+- Decide on an idea
+- Remember: Idea is not graded
+- Group sessions will start next lecture
