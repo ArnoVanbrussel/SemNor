@@ -6,6 +6,7 @@
 	- "The area of computer science that studies how machines can perform tasks that would normally require a sentient agent."
 - Skeptical def.:
 	- "The area of computer science that studies how machines can closely imitate human intelligence."
+### 1.1.1 Uses
 - Forms of data:
 	- Text
 	- Voice
@@ -20,7 +21,19 @@
 	- Self driving cars
 	- Object identification
 	- Object tracking
-### 1.1.1 Case Studies
+### 1.1.2 Case Studies
+#### 1.1.2.1 Case 1
+- ChatGPT snake game
+- Flappy Bird
+	- Leader of "AI Team"
+		- Unity
+#### 1.1.2.2 Case 2
+- Systematic Literature Review
+- Visualising Key words from 64 papers
+	- Concept map
+	- Mind map
+	- Network Graphic
+
 ## 1.2 Why do we need to study AI? (p.3)
 - Brain processes info (by increasing complexity):
 	- Brainstem (Heart rate, body temp) => Midbrain (Motor regulation, appetite) => Limbic (Behaviour, Emotions) => Neocortex (Abstract thought)
