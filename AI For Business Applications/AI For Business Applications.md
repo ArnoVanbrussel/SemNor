@@ -1,4 +1,4 @@
-*Pages refer to the book "Artificial Intelligence with Python*
+*Pages refer to the book "Artificial Intelligence with Python"*
 # 1 Introduction To AI (p.1)
 ## 1.1 What is AI? (p.2)
 - Philosophically: What is intelligence?
@@ -6,6 +6,21 @@
 	- "The area of computer science that studies how machines can perform tasks that would normally require a sentient agent."
 - Skeptical def.:
 	- "The area of computer science that studies how machines can closely imitate human intelligence."
+- Forms of data:
+	- Text
+	- Voice
+	- Image
+	- Video
+- NLP (Neurolinguistic programming)
+	- AI Chatbot
+	- Smart home
+	- AI phone call
+- Computer Vision
+	- Deepfakes
+	- Self driving cars
+	- Object identification
+	- Object tracking
+### 1.1.1 Case Studies
 ## 1.2 Why do we need to study AI? (p.3)
 - Brain processes info (by increasing complexity):
 	- Brainstem (Heart rate, body temp) => Midbrain (Motor regulation, appetite) => Limbic (Behaviour, Emotions) => Neocortex (Abstract thought)
