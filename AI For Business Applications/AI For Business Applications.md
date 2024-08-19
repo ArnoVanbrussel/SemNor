@@ -33,7 +33,11 @@
 	- Concept map
 	- Mind map
 	- Network Graphic
-
+#### 1.1.2.3 Case 3
+- Image generation
+- Midjourney
+#### 1.1.2.4 Case 4
+- Music Generation
 ## 1.2 Why do we need to study AI? (p.3)
 - Brain processes info (by increasing complexity):
 	- Brainstem (Heart rate, body temp) => Midbrain (Motor regulation, appetite) => Limbic (Behaviour, Emotions) => Neocortex (Abstract thought)
