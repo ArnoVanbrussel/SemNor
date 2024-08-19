@@ -1,4 +1,4 @@
-*Pages refer to the book "Artificial Intelleigence with Python*
+*Pages refer to the book "Artificial Intelligence with Python*
 # 1 Introduction To AI (p.1)
 ## 1.1 What is AI? (p.2)
 - Philosophically: What is intelligence?
