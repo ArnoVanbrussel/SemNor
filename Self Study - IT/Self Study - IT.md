@@ -1,0 +1,36 @@
+- Find academic topic related to IT and IS
+- Conduct a literature search
+- Write thesis:
+	- Introduction
+		- Motivate and clarify
+	- Theory chapter(s)
+	- Summary
+		- Preferably with thoughts about further research or own views on the topic
+## How to start
+- Search for a topic YOU find interesting, preferably based on other courses and lectures
+- Various academic topics proposed by our program coordinator
+	- Safety
+	- IoT
+	- GDPR
+	- Technical solutions
+	- AI
+## Sharpen the theme
+- theme is general
+- issue/problem is specific
+- eg.:
+	- IoT
+		- Security & Privacy
+		- How affect daily lives
+		- How can help the elderly or disabled
+## Structure
+- Introduction
+	- explain why interesting
+	- motivate reader
+	- facts and numbers to trigger justification
+- Literature search
+	- which search words were used
+	- which databases
+	- why this article
+- Theory
+	- Define what you are talking about
+	- What do we know about this issue today
