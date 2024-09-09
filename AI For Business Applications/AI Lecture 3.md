@@ -35,3 +35,9 @@
 5. Train and predict using k-Nearest neighbours
 6. Evaluate the model
 7. Conduct and adjust
+## 2.3 Regression
+### Linear vs Logistic regression
+- Linear:
+	- The relationship between a dependent variable (target) and one or more independent variables (features) is linear
+- Logistic:
+	- Yes or No
