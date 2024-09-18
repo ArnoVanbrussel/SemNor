@@ -116,7 +116,7 @@
 - Example of strategic decision: 
 	- Identify new markets 
 	- choose store locations
-## Tactical Decisions
+## 4.2 Tactical Decisions
 - Tactical decisions relate to the implementation of strategic decisions. 
 - Focus on analyzing short-term initiatives within specific line-of-business domains, such as marketing, sales, purchasing or customer service. 
 - Tactical decisions are directed towards 
@@ -129,7 +129,19 @@
 - Example of tactical decision: 
 	- Choose suppliers, 
 	- forecast sales
-## Operational Decisions
+## 4.3 Operational Decisions
 - Operational decisions relate to day-to-day operations of the enterprise. 
 - They have a short-term horizon as they are taken repetitively. 
-- These decisions are based on facts regarding the events and do not require much of business judgement. • Operational decisions are taken at lower levels of management. • Example of operational decision: – Resolve order delays, – schedule employees
+- These decisions are based on facts regarding the events and do not require much of business judgement. 
+- Operational decisions are taken at lower levels of management. 
+- Example of operational decision: 
+	- Resolve order delays, 
+	- schedule employees
+## 4.4 BI Business Value
+- BI can add value to: 
+	- Management Processes: 
+		- Planning budgeting, performance monitoring/assessment, process improvement, cost analysis, optimization, etc. 
+	- Revenue Generating Processes: 
+		- Customer segmentation, campaign management, channel management, sales management, etc. 
+	- Resource Consumption Processes: 
+		- Product/service development, order management, manufacturing/operations, supply chain, purchasing, etc
