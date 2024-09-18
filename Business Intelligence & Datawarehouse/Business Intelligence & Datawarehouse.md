@@ -217,7 +217,7 @@
 ### 2.3.3 Data Mart
 - Data mart is a smaller version of the Data Warehouse which deals with a single subject area. 
 - Since Data marts focus on one area, they collect data from a limited number of sources 
-- The time taken to build a Data Mart is very less compared to the time taken to build a Data Warehouse
+- The time it takes to build a Data Mart is less compared to the time taken to build a Data Warehouse
 ![[Pasted image 20240918113206.png|450]]![[Pasted image 20240918113214.png|250]]
 ### 2.3.4 Top-Down Architecture
 ![[Pasted image 20240918113410.png]]
@@ -225,14 +225,14 @@
 ![[Pasted image 20240918113429.png]]
 ### 2.3.6 Federated Architecture
 ![[Pasted image 20240918113510.png]]
-- For highly decentralized or independent organizations, the federated data warehouse architecture provides another compromise approach. 
-- As depicted in this diagram, the federated data warehouse approach supports two levels of data warehouses. 
-- Each organization independently maintains one or more data warehouses using any of the architectures. 
-- To provide inter-organizational sharing, each organization contributes to the federated data warehouse
-- Typically, another layer of data integration and a query portal support data sharing in the federated data warehouse. 
-- Depending on the environment, participation can be voluntary or compulsory (typically required by government agencies). 
-- Some users of a federated data warehouse may be external stakeholders, not members of participating organizations. 
-- A possible use case is a consortium formed by several companies can adopt the Federated Architecture
+- Federated data warehouse architecture is suited for decentralized or independent organizations.
+- It supports two levels:
+    - Each organization independently maintains its own data warehouse.
+    - A shared federated data warehouse enables inter-organizational data sharing.
+- Data integration and a query portal are typically used to facilitate sharing.
+- Participation can be voluntary or compulsory (e.g., for government regulations).
+- External stakeholders may access the federated data warehouse.
+- Ideal for consortiums where multiple companies collaborate and share data.
 ### 2.3.7 Architecture Selection Factors
 - Learning effects 
 	- Project risk 
@@ -242,3 +242,10 @@
 	- Information independence 
 	- Task routineness
 ## 2.4 Employment Opportunities
+![[Pasted image 20240918114927.png]]
+### 2.4.1 Skill-Position Mapping
+![[Pasted image 20240918114943.png]]
+### Competency Acquisition
+![[Pasted image 20240918115023.png]]
+### Salary Percentiles (US - 2018)
+![[Pasted image 20240918115053.png]]
