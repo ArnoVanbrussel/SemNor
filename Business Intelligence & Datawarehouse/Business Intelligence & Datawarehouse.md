@@ -219,4 +219,26 @@
 - Since Data marts focus on one area, they collect data from a limited number of sources 
 - The time taken to build a Data Mart is very less compared to the time taken to build a Data Warehouse
 ![[Pasted image 20240918113206.png|450]]![[Pasted image 20240918113214.png|250]]
-### Top-Down Architecture
+### 2.3.4 Top-Down Architecture
+![[Pasted image 20240918113410.png]]
+### 2.3.5 Bottom-up Architecture
+![[Pasted image 20240918113429.png]]
+### 2.3.6 Federated Architecture
+![[Pasted image 20240918113510.png]]
+- For highly decentralized or independent organizations, the federated data warehouse architecture provides another compromise approach. 
+- As depicted in this diagram, the federated data warehouse approach supports two levels of data warehouses. 
+- Each organization independently maintains one or more data warehouses using any of the architectures. 
+- To provide inter-organizational sharing, each organization contributes to the federated data warehouse
+- Typically, another layer of data integration and a query portal support data sharing in the federated data warehouse. 
+- Depending on the environment, participation can be voluntary or compulsory (typically required by government agencies). 
+- Some users of a federated data warehouse may be external stakeholders, not members of participating organizations. 
+- A possible use case is a consortium formed by several companies can adopt the Federated Architecture
+### 2.3.7 Architecture Selection Factors
+- Learning effects 
+	- Project risk 
+	- Intangible business value 
+- Strategic view of information technology 
+	- Level of sponsorship 
+	- Information independence 
+	- Task routineness
+## 2.4 Employment Opportunities
