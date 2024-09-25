@@ -245,7 +245,82 @@
 ![[Pasted image 20240918114927.png]]
 ### 2.4.1 Skill-Position Mapping
 ![[Pasted image 20240918114943.png]]
-### Competency Acquisition
+### 2.4.2 Competency Acquisition
 ![[Pasted image 20240918115023.png]]
-### Salary Percentiles (US - 2018)
+### 2.4.3 Salary Percentiles (US - 2018)
 ![[Pasted image 20240918115053.png]]
+# 3 Lecture 3: Multidimensional Data Representation and Manipulation
+## 3.1 Dimensional Modelling
+- Methods of organising data
+![[Pasted image 20240925081951.png]]
+![[Pasted image 20240925082011.png]]
+- Unique technique of structuring data
+- Commonly used in DWH
+- Optimized for faster data retrieval
+- Oriented around performance and usability
+- Designed for reporting / OLAP (Online Analytical Processing)
+### 3.1.1 Facts
+- Foundation of DWH
+- Key measurements
+- Aggregated and analyzed
+- Fact table: PK, FK, Facts
+### 3.1.2 Dimensions
+- Categorizes facts
+- Supportive and descriptive
+- Filtering, grouping and labeling
+- Non aggregable
+- Static
+## 3.2 Representation of Data in DW
+- **Dimensional Modeling**
+	- Retrieval based system that supports high-volumen query access
+- **Star Scheme**
+	- Most commonly used and simplest style of dimensional modeling
+	- contain a **fact table** surrounded by and connected to several **dimension tables**
+![[Pasted image 20240925082952.png]]
+- **Snowflake scheme**
+	- extension of star scheme
+![[Pasted image 20240925083006.png]]
+## 3.3 Data Cube Concepts
+### 3.3.1 Business Analyst Perspective
+![[Pasted image 20240925101721.png]]
+### 3.3.2 Data Cube Basics
+- Business analyst model
+	- Factors or influencing variables of interest
+	- Quantitative variables
+	- Multidimensional arrangement
+- Terminology
+	- Dimension: subject label for a row or column
+	- Member: value of dimension
+	- Measure: quantitative variables stored in cells
+### 3.3.3 Notes on Dimensions and Measures
+- Hierarchical dimensions with sub members 
+- Sparsity 
+	- Many cells do not have values 
+	- Increases with dimension detail and number of dimensions 
+- Measures 
+	- Derived measures 
+	- Multiple measures in cell
+### 3.3.4 Measure Aggregation Properties
+
+- Additive 
+	- Summarized by addition across all dimensions 
+	- Common measures such as sales, cost, and profit 
+- Semi-Additive 
+	- Summarized by addition in some but not all dimensions such as time 
+	- Periodic measurements such as account balances and inventory levels 
+- Non-Additive 
+	- Cannot be summarized by addition through any dimension 
+	- Historical facts such as unit price for a sale
+### 3.3.5 Measure Aggregation Example
+- Dimensions 
+	- Course: course id, degree, department, and college – Student: student id, major, department, and college 
+	- Time: semester, academic year, academic decade 
+- Measures: 
+	- Credit hours 
+	- Grade 
+	- Unit tuition – Tuition 
+- Aggregation properties for measures: ?
+## 3.4 Data Cube Operators
+### 3.4.1 Slice Operator
+- Subset of dimensions
+- 
