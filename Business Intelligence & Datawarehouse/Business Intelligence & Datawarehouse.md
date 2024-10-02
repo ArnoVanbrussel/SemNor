@@ -323,4 +323,23 @@
 ## 3.4 Data Cube Operators
 ### 3.4.1 Slice Operator
 - Subset of dimensions
-- 
+- Set of dimension to specific value
+
+**Slice Summarize Variation**
+- Replace a dimension with a summary of its values across all members
+### 3.4.2 Dice Operator
+- Replace dimension with subset of values
+- Dice operation often follows slice
+![[Pasted image 20240925103611.png]]
+### Navigation Operators
+- Operators for hierarchical dimensions 
+- Drill-down: add detail to a dimension 
+- Roll-up: remove detail from a dimension 
+- Distribute or recalculate measure values
+### Drill-down example
+![[Pasted image 20240925103701.png]]
+### Pivot Operator
+- Rotate or rearrange dimensions
+![[Pasted image 20240925103725.png]]
+### Operator Summary
+![[Pasted image 20240925103750.png]]

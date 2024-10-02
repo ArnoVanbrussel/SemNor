@@ -15,11 +15,17 @@
 	- Input data: furry + barks
 	- Output data: dog
 ## 1.3 Steps in a ML pipeline
-- Problem Definition
-- Data Ingestion
-- Data Preparation
-- Data segregation
-- Model training
-- Model Evaluation
-- Model Deployment
-- Performance Monitoring
+![[Pasted image 20241002162443.png]]
+***Problem Definition***
+- For a given loan, will it be repaid or not? 
+- When will the loan be repaid? 
+- How much money will be received from a given loan? 
+- What will be the profit made on a given loan? 
+- What will be the profit made on a given loan without using disallowed input features?
+
+***Data Ingestion***
+- What data provider or vendor should we use? Can they be trusted?
+- How will it be ingested?
+- Should it be stored as a file or in a database?
+
+******
