@@ -343,3 +343,93 @@
 ![[Pasted image 20240925103725.png]]
 ### Operator Summary
 ![[Pasted image 20240925103750.png]]
+# Lecture 4: The ETL Process
+## Why do we need a Data Warehouse
+- All information is in one place
+- Up-to-date information
+- Quick access
+- No size limits
+- All history available
+- Easy to understand
+- Clear and uniform definitions
+- Standardized data
+## Data Marts
+- To meet the specific needs of an organisation, a data mart may cover only a particular process and be limited to the boundaries of that process.
+	- You won't find employee absence information in a sales data mart, because a sales analyst doesn't need that information
+- However, there is no limitation to the amount or type of data that may be included in a data mart.
+## Start Schema Designing Principles
+### Surrogate Keys (primary key)
+- Single column key for each dimension table
+- Integer indexes are faster than char or datetime indexes
+- Enable the storage of multiple versions of an item where the item retains its original source key but is allotted a new surrogate key
+- Allow for dealing with optional relations, unknown values and irrelevant data
+### Naming and Type Conventions
+- All tables get a prefix
+	- STG_ = staging tables
+	- HIS_ = historical archive tables
+	- DIM_ = dimension tables
+	- FCT_ = fact tables
+	- AGG_ = aggregate tables
+	- LKP_ = lookup tables
+- Meaningful names for columns
+- Avoid use of reserved words for database objects as tables
+### Granularity
+
+> The level of detail at which the data is stored in the data warehouse.
+
+- Store the data at the lowest level of detail possible
+### Fact table
+1. Identify the business process for analysis
+	- Sales
+	- Order processing
+2. Declare the grain
+	- Transaction
+	- Order
+	- Order Lines
+	- Daily
+	- Daily + location
+3. Identify dimensions that are relevant
+	- What, when, where, why?
+	- Time, location, products, customers
+	- Filtering, grouping
+4. Identify facts for measurements
+### Two-Column Table Methodology
+- Check if star schema is correct
+	- *Imaginary table* of our view to the fact measure from one particular dimension angle
+- First column represents category or dimensions
+- Second column represents fact
+- Consists of two types:
+	- One fact measure
+	- Multiple fact measure
+### One Fact Measure
+- First column contains a category
+- Second column contains a statistical numerical figure
+![[Pasted image 20241009083628.png]]
+### Multiple Fact Measure
+- Second column contains multiple facts F={F1, F2, F3, ...}
+- All F's must exist in all tables
+![[Pasted image 20241009083724.png]]
+### A College Star Schema Tutorial
+| **E/R Diagram**                                                                                                                                                                    | **Star Schema**                                                                                                                                                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Used as operational system to support operational procedures                                                                                                                       | Used for analysis purposes                                                                                                                                                                                                                                 |
+| Example:<br>- As the college is a multi-campus university, some courses are offered in a different campus. The admission office handles international students of all campuses<br> | Example:<br>- How many students come from certain countries<br>- What is the total income for certain postgraduate courses?<br>- How many students are handled by certain agents?<br>- How does the number of enrolment courses fluctuate during the year? |
+
+![[Pasted image 20241009084259.png]]
+### Case Study Summary
+- 3 ways to create dimension tables:
+	- Use create table as `select *
+	- this directly copies from the table in the operational database
+- Choose selected attributes from the table in the operational database
+- Create the dimension table manually, followed by `insert into insert` new records into the table
+### Summary on facts and dimensions
+- Fact: Fact is numerical and aggregated value
+- Dimension: Point of view
+- Creating Dimension Tables:
+	- Direct copy
+	- Extracting some relevant attributes
+	- Manually created
+- Creating Fact Tables:
+	- -Direct retrieval from the tables in the operational database
+- To validate, the two-column method can be used
+## ETL Process
