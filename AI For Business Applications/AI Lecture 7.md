@@ -113,14 +113,14 @@
 - **Learning**: The process of adjusting weights to improve predictions. 
 - **Backpropagation**: Algorithm for updating weights during training. 
 - **Activation Functions**: Determine if neurons are activated.
-## Example
+## 5.1 Example
 ![[Pasted image 20241014140151.png]]
 ![[Pasted image 20241014140200.png]]
 ![[Pasted image 20241014140212.png]]
 ![[Pasted image 20241014140222.png]]
-## Deep Neural Network
+## 5.2 Deep Neural Network
 ![[Pasted image 20241014140355.png]]
-## Training a Neural Network
+## 5.3 Training a Neural Network
 - If we are dealing with N-dimensional input data, then the input layer will consist of N neurons. 
 - If we have M distinct classes in our training data, then the output layer will consist of M neurons. 
 - A simple neural network will consist of a couple of layers and a deep neural network will consist of many layers.
@@ -130,9 +130,20 @@
 - Each neuron acts as a simple function and the neural network trains itself until the error goes below a certain a threshold. 
 - The error is the difference between the predicted output and the actual output. 
 - Based on how big the error is, the neural network adjusts itself and retrains until it gets closer to the solution.
-## When to use it
+## 5.4 When to use it
 ***Neural networks are universal approximators, and they work best if the system you are using them to model has a high tolerance to error.*** 
 - Capturing associations or discovering regularities within a set of patterns; 
 - Where the volume, number of variables or diversity of the data is very great; 
 - The relationships between variables are vaguely understood; or, 
 - The relationships are difficult to describe adequately with conventional approaches.
+## Applications
+- **Image and Video Analysis:** Image classification, object detection, video analysis. 
+- **Natural Language Processing**: Language translation, sentiment analysis, chatbots. 
+- **Speech Recognition and Synthesis:** Speech-to-text, text-to-speech. 
+- **Autonomous Vehicles:** Self-driving cars. 
+- **Healthcare and Medicine:** Disease diagnosis, drug discovery, patient risk assessment. 
+- **Finance**: Stock market prediction, credit scoring, fraud detection. 
+- **Robotics**: Object manipulation, navigation. 
+- **Industrial and Manufacturing:** Quality control, predictive maintenance. 
+- **Energy and Environmental Applications:** Energy consumption prediction, environmental monitoring. 
+- **Anomaly Detection:** Cybersecurity and fraud detection.
