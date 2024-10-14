@@ -93,3 +93,46 @@
 	- **Key Points:** CAMShift tracks objects by using their color distribution and adjusts the search window size based on the object's dimensions, making it effective for objects that change in size and shape
 # 4 Case Study
 ## 4.1 SIFT
+ - **Load** the Images, then create SIFT Detector. 
+ - **Detect Keypoints and Compute Descriptors:** This step generates a set of key points (such as edges, corners, or blobs), and then compute the descriptor (feature vectors) for each key point that represents its appearance. 
+ - **Create a Matcher**: Initialize a feature matcher. Common choices include FLANN (Fast Library for Approximate Nearest Neighbors) or BFMatcher (Brute Force Matcher). 
+ - **Match Keypoints:** Match the descriptors between the reference image and the target image using the matcher. If using FLANN, use the kNNMatch method to get the k-nearest matches. 
+ - **Filter Good Matches:** Apply a ratio test (e.g., Lowe’s ratio test) to filter out weak matches. Keep only the matches that are significantly better than the second-best match. 
+ - **Draw Matches:** Use cv2.drawMatches to visualize the matched key points between the reference image and the target image. 
+ - **Display Results:** Use cv2.imshow() to display the result with drawn matches
+## 4.2 Case: Detect object from video
+# 5 Neural Networks
+
+- An Artificial Neural Network (ANN) is a computational model inspired by the structure and function of the human brain. It is a fundamental component of machine learning and deep learning, designed to process and learn from data to make predictions or decisions. 
+- ANNs consist of interconnected nodes, often referred to as neurons or units, organized into layers. These layers typically include an input layer, one or more hidden layers, and an output layer. 
+- ANNs are used in pattern recognition, regression, classification, computer vision, NLP, and deep learning, and have revolutionized machine learning.
+
+- **Neurons**: Nodes that process and transmit information. 
+- **Layers**: Organization into input, hidden, and output layers. 
+- **Weights and Biases**: Adjusted during training to minimize errors. 
+- **Learning**: The process of adjusting weights to improve predictions. 
+- **Backpropagation**: Algorithm for updating weights during training. 
+- **Activation Functions**: Determine if neurons are activated.
+## Example
+![[Pasted image 20241014140151.png]]
+![[Pasted image 20241014140200.png]]
+![[Pasted image 20241014140212.png]]
+![[Pasted image 20241014140222.png]]
+## Deep Neural Network
+![[Pasted image 20241014140355.png]]
+## Training a Neural Network
+- If we are dealing with N-dimensional input data, then the input layer will consist of N neurons. 
+- If we have M distinct classes in our training data, then the output layer will consist of M neurons. 
+- A simple neural network will consist of a couple of layers and a deep neural network will consist of many layers.
+
+***So how can a neural network be used to classify data?*** 
+- The first step is to collect the appropriate training data and label it. 
+- Each neuron acts as a simple function and the neural network trains itself until the error goes below a certain a threshold. 
+- The error is the difference between the predicted output and the actual output. 
+- Based on how big the error is, the neural network adjusts itself and retrains until it gets closer to the solution.
+## When to use it
+***Neural networks are universal approximators, and they work best if the system you are using them to model has a high tolerance to error.*** 
+- Capturing associations or discovering regularities within a set of patterns; 
+- Where the volume, number of variables or diversity of the data is very great; 
+- The relationships between variables are vaguely understood; or, 
+- The relationships are difficult to describe adequately with conventional approaches.
