@@ -416,6 +416,8 @@
 | Example:<br>- As the college is a multi-campus university, some courses are offered in a different campus. The admission office handles international students of all campuses<br> | Example:<br>- How many students come from certain countries<br>- What is the total income for certain postgraduate courses?<br>- How many students are handled by certain agents?<br>- How does the number of enrolment courses fluctuate during the year? |
 
 ![[Pasted image 20241009084259.png]]
+![[Pasted image 20241009092432.png]]
+![[A College Star Schema Tutorial.pdf]]
 ### Case Study Summary
 - 3 ways to create dimension tables:
 	- Use create table as `select *
@@ -433,3 +435,35 @@
 	- -Direct retrieval from the tables in the operational database
 - To validate, the two-column method can be used
 ## ETL Process
+![[Pasted image 20241009091853.png]]
+### ETL Process
+- ETL stands for:
+	- Extraction: Collect the data from heterogenous data sources 
+	- Transformation: transform, clean, and standardize the data such that it can be integrated in the same data warehouse 
+	- Loading: consists of loading the data to the data warehouse
+- Data staging area: the part of the data warehouse where transformations happen
+- Staging area should not be available for querying
+### General Data Warehouse Architecture
+![[Pasted image 20241009092847.png]]
+### Data Integration and the Extraction, Transformation and Load Process
+![[Pasted image 20241009092923.png]]
+### ETL (Extract, Transform, Load)
+- Issues affecting the purchase of an ETL Tool
+	- expensive
+	- steep learning curve
+- Important criteria
+	- Ability to read/write to unlimited number of data sources/architectures
+	- Automatic capturing and delivery of metadata
+	- History of conforming to open standards
+	- Easy-to-use interface
+### Staging Area
+- Where extracted data is stored and possibly transformed before loading the data into the central warehouse
+	- source system load times should be kept to minimum
+	- using separate staging area enables you to work on a specific subset of the data
+	- dedicated schema allows for specific sorting or indexing to further optimise and support the ETL process
+	- safety net: process can fail before completing
+## Tutorial on Spoon
+### Objective: Building coffeemerchant Data Warehouse Using Spoon PDI
+![[Pasted image 20241009103043.png]]
+## Assignment
+### Creating the Data Warehouse Using Spoon
