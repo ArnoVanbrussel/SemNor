@@ -467,3 +467,5 @@
 ![[Pasted image 20241009103043.png]]
 ## Assignment
 ### Creating the Data Warehouse Using Spoon
+
+... I gave up sorry
