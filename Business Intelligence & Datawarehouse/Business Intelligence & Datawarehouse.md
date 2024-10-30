@@ -493,7 +493,6 @@
 - Slicing = filtering
 ![[Pasted image 20241030082743.png]]
 > Slice. A slice is a subset of a multidimensional array (usually a two-dimensional representation) corresponding to a single value set for one (or more) of the dimensions not in the subset
-
 ### 6.1.5 Pivoting
 > Pivot. This is used to change the dimensional orientation of a report or ad hoc query-page display
 
@@ -504,5 +503,302 @@
 > Drilling down or up is a specific OLAP technique whereby the user navigates among levels of data ranging from the most summarized (up) to the most detailed (down).
 
 ![[Pasted image 20241030083002.png]]
-### Roll-up
+### 6.1.8 Roll-up
 ![[Pasted image 20241030083040.png]]
+### 6.1.9 Implementation of OLAP
+- **MOLAP**: Based on data in «multidimensional» database 
+	- IBM Cognos 
+	- Oracle Database OLAP Option 
+	- Microsoft Analysis Services 
+- **ROLAP**: Based on data in a relational database 
+	- Mondrian OLAP Server 
+- **HOLAP**: A combination of the two previous types(Hybrid OLAP) – some data can be represented multidimensionally and others relasionally 
+	- Most products today supports HOLAP
+#### 6.1.9.1 MOLAP - Multidimensional OLAP
+- The «classic» type of OLAP 
+	- Data stored in multidimensional arrays 
+	- Typically contains summarized and calculated data 
+	- Very quick for queries that are already calculated 
+	- Can use a lot of time to update • Do not use SQL
+#### 6.1.9.2 ROLAP - Relational OLAP
+- Data in a relational database 
+- Can use special tables for summarized data 
+- Data can be accessed with SQL 
+- Queries not limited to existing summarizations 
+- The database system should be adapted for OLAP 
+	- Some database systems are optimized for OLTP only 
+	- Database systems like Oracle Enterprise Server, SQL Server and IBM DB2 are optimized both for OLTP and OLAP 
+- Loading usually much faster than for MOLAP databases
+#### 6.1.9.3 HOLAP - Hybrid OLAP
+- Vertical partitioning: 
+	- Detailed data stored in a relational database 
+	- Aggregated data stored in a multidimensional database
+- Horizontal partitioning: 
+	- A selection of data, typically the most recent, are stored multidimensionally 
+	- Older data are stored relationally
+## 6.2 OLTP (Online Transaction Processing)
+- OLTP is a type of data processing that consists of executing a number of transactions occurring concurrently - online banking, shopping, order entry, or sending text messages, for example. 
+- These transactions traditionally are referred to as economic or financial transactions, recorded and secured so that an enterprise can access the information anytime for accounting or reporting purposes.
+### 6.2.1 OLTP vs OLAP
+- OLTP (Online Transaction Processing) 
+	- Capturing and storing data from ERP, CRM, POS, 
+	- The main focus is on efficiency of routine tasks 
+- OLAP (Online Analytical Processing) 
+	- Converting data into information for decision support 
+	- Data cubes, drill-down/rollup, slice & dice, 
+	- Requesting ad hoc reports 
+	- Conducting statistical and other analyses 
+	- Developing multimedia-based applications
+### 6.2.2 OLAP vs OLTP
+![[Pasted image 20241030085034.png]]
+## 6.3 SQL CUBE Operator
+### 6.3.1 CUBE Operator Characteristics
+![[Pasted image 20241030085733.png]]
+### 6.3.2 CUBE / Group By Comparison
+![[Pasted image 20241030085759.png|250]]![[Pasted image 20241030085814.png|250]]
+### 6.3.3 CUBE Operator Calculations
+- GROUP BY CUBE(Col1, Col2) 
+	- M unique values in Col1 
+	- N unique values in Col2 
+- Result rows 
+	- Maximum of M × N rows: GROUP BY Col1, Col2 
+	- Maximum subtotal rows of M + N + 1 (CUBE) 
+- Subtotal groups 
+	- Three groups of subtotal rows (Col1, Col2, grand total) 
+	- Derive CUBE operation with UNION operations
+### 6.3.4 CUBE Calculations with 3 columns
+- GROUP BY Col1, Col2, Col3
+- Result rows 
+	- Maximum GROUP BY rows: M × N × P 
+	- Maximum subtotal rows: M + N + P + M × N + M × P + N × P + 1 
+- Subtotal groups 
+	- Normal GROUP BY totals (1) 
+	- Combinations of 2 columns (3) 
+	- Combinations of 1 column (3) 
+	- Grand total (1) 
+	- Number of subtotal groups: 8 (2³)
+### 6.3.5 Cube
+- In OLAP, it is typical to produce a matrix visual or table which crosses two pieces of categorical information and contains sub-totals
+![[Pasted image 20241030092028.png]]
+### 6.3.6 CUBE Example
+- Summarize sales in 2006 in Orlando and Chicago by product type
+![[Pasted image 20241030092100.png]]
+![[Pasted image 20241030092120.png]]
+#### 6.3.6.1 Group by Roll up
+- GROUP BY ROLLUP (itemtype, city)
+![[Pasted image 20241030092208.png]]
+- GROUP BY ROLLUP (city, itemtype)
+![[Pasted image 20241030092330.png]]
+## 6.4 Decision Making
+### 6.4.1 Business Pressures–Responses–Support Model
+![[Pasted image 20241030092532.png]]
+### 6.4.2 Decision Making
+- Is a process of 
+	- choosing among two or more alternative courses of action for the purpose of attaining one or more goals
+- It is influenced by
+	- behavioral and scientific disciplines
+### 6.4.3 Managerial Responsibilities
+- Planning
+- Organizing
+- Commanding
+- Controlling
+- Coordinating
+### 6.4.4 Decision Making Steps
+- Define the problem 
+- Construct a model 
+- Identify & Evaluate possible solutions 
+- Compare, choose, and recommend a potential solution to the problem
+### 6.4.5 Decisions Making Scenarios
+- Structured Decisions
+- Unstructured Decisions 
+- Semi-structured decisions
+### 6.4.6 Decision Making Constraints & Complexities
+- Evaluating what-if scenarios 
+- Experimentation with a real system 
+- Changes in the decision-making environment may occur continuously 
+- Time pressure on the decision maker 
+- Analyzing a problem takes time/money 
+- Insufficient or too much information 
+- Accuracy versus speed 
+- Effectiveness versus efficiency
+### 6.4.7 Decision Making Support
+- Group communication and collaboration 
+- Improved data management 
+- Giant data warehouses and big data
+- Analytical support 
+- Overcoming cognitive limits in information processing and storage 
+- Knowledge management 
+- The ability to access information anywhere, anytime
+### 6.4.8 Common Approaches of Decision Makers
+- Left brain approach
+- Right brain approach
+- Accommodation
+- Integrated
+### 6.4.9 Simon's Decision-Making Process
+![[Pasted image 20241030103029.png]]
+### 6.4.10 DM Process Phases
+
+#### 6.4.10.1 DM Process Intelligence Phase
+
+- Problem Identification
+- Problem Ownership
+- Problem Classification
+- Problem Decomposition
+- Outcome of intelligence phase is a formal problem statement
+- Scan the environment, either intermittently or continuously
+- Identify problem situations or opportunities
+- Monitors the results of the implementation
+
+#### 6.4.10.2 DM Process Design Phase
+- Determine alternatives
+    - Finding/developing and analyzing possible courses of actions
+- Predict and measure outcomes
+    - A model of the decision-making problem is constructed, tested and validated
+#### 6.4.10.3 DM Process Choice Phase
+- Making the actual decision and the commitment to follow a certain course of action
+    - Search
+        - Evaluation
+        - Recommendation
+- Search approaches
+    - Analytic techniques (solving with a formula)
+        - Algorithms (step-by-step procedures)
+        - Heuristics (rule of thumb)
+        - Blind search (truly random search)
+- Model manipulation
+    - Sensitivity analysis
+        - What-if analysis
+        - Goal seeking
+#### 6.4.10.4 DM process Implementation Phase
+- Implementation
+    - The initiation of a new order of things
+        - The introduction of change
+        - Putting a recommended solution to work
+- Issues
+    - Resistance to change
+        - Degree of support of top management
+        - User training
+### 6.4.11 Common strategies of decision makers
+- Optimizing versus satisfying
+- Elimination by aspects vs incrementalism
+- Mixed scanning
+- Minimizing risk and uncertainty
+
+## 6.5 Decision Support Systems
+### 6.5.1 Decision Support Systems (DSS)
+- DSS describes any computerized system that supports decision making in an organization. 
+- DSS is to support managerial decisions in semi-structured and unstructured decision situations that middle-level managers typically face; 
+	- attempt to combine the use of models or analytical techniques with traditional data access and retrieval functions; 
+	- focus on features which make them easy to use in an interactive mode; 
+	- emphasize flexibility and adaptability to accommodate changes in the environment and decision-making approach of the user
+### 6.5.2 Components of DSS
+![[Pasted image 20241030105151.png]]
+### 6.5.3 DSS Classifications
+- Data-driven 
+- Document-driven 
+- Knowledge-driven 
+- Model-driven 
+- Communications driven
+### 6.5.4 Evolution of DSS Applications
+- Executive Information Systems (EIS) 
+- Group Support Systems (GSS) 
+- Geographic Information Systems (GIS) 
+- Expert Systems (ES) 
+- Knowledge Management Systems (KMS) 
+- Enterprise Resource Planning Systems (ERP), Customer Relationship Management Systems (CRM), Supply Chain Management Systems (SCM)
+### 6.5.5 How decisions are supported in practice
+![[Pasted image 20241030111006.png]]
+## 6.6 Data Visualization
+> “The use of visual representations to explore, make sense of, and communicate data.”
+- Data visualization versus. Information visualization 
+	- Information = aggregation, summarization, and contextualization of data 
+- Related to information graphics, scientific visualization, and statistical graphics 
+- Often includes charts, graphs, illustrations,
+### 6.6.1 A Brief History of Data Visualization
+- Data visualization can date back to the second century A D 
+- Most developments have occurred in the last two and a half centuries
+- Until recently it was not recognized as a discipline 
+- Today’s most popular visual forms date back a few centuries
+### 6.6.2 The First Line/Area Chart Created by William Playfair in 1801
+> William Playfair is widely credited as the inventor of the modern chart, having created the first line and pie charts
+![[Pasted image 20241030111215.png]]
+### 6.6.3 Decimation of Napoleon’s Army During the 1812 Russian Campaign
+![[Pasted image 20241030111240.png]]
+### 6.6.4 Different types of charts and graphs
+- Basic Charts and Graphs 
+	- Line chart 
+	- Bar chart
+	- Pie chart 
+		- Donut chart 
+	- Scatter plot 
+		- Bubble chart 
+- Specialized charts 
+	- Histogram, Gantt chart, PERT chart, Geographic charts, Buller chart, Hear map, Highlight table, Tree map
+### 6.6.5 Which chart to use?
+![[Pasted image 20241030111354.png]]
+### 6.6.6 An Example Gapminder Chart Wealth and Health of Nations
+![[Pasted image 20241030111437.png]]
+### 6.6.7 The Emergence of Data Visualization and Visual Analytics
+- Many data visualization companies represented 
+- There is a continuous move towards visualization in analytics
+- Magic Quadrant for Business Intelligence and Analytics Platforms
+![[Pasted image 20241030111544.png]]
+### 6.6.8 Technology Insights 4.4
+- Telling Great Stories with Data and Visualization 
+- Why story? 
+- What Is a Good Story? 
+- Story telling best practices: 
+	- Think of your analysis as a story—use a story structure. 
+	- Be authentic—your story will flow. 
+	- Be visual—think of yourself as a film editor. 
+	- Make it easy for your audience and you. 
+	- Invite and direct discussion.
+### Visual Analytics
+- A recently coined term
+	- Information visualization + predictive analytics
+- Information visualization
+	- Descriptive, backwards focused
+	- "what happened", "what is happening"
+- Predictive analytics
+	- predictive, future focused
+	- "what will happen", "why will it happen"
+- Strong move toward visual analytics
+### Visual Analytics by SAS Institute
+- SAS Visual Analytics Architecture
+![[Pasted image 20241030112144.png]]
+- SAS Viya for Education – Analytics on the Cloud
+![[Pasted image 20241030112226.png]]
+### Information Dashboards
+- Information dashboards are commonly used in Business Process Management (BPM) software suites and BI platforms
+- Dashboards provide visual displays of important information that is consolidated and arranged on a single screen so that information can be digested at a single glance and easily drilled in and further explored
+### Performance Dashboards
+![[Pasted image 20241030112533.png]]
+- Dashboard design
+	- The fundamental challenge of dashboard design is to display all the required information on a single screen, clearly and without distraction, in a manner that can be assimilated quickly
+- Three layer of information
+	- Monitoring
+	- Analysis
+	- Management
+- What to look for in a dashboard
+	- Use of visual components to highlight data and exceptions that require action
+	- Transparent to the user, meaning that they require minimal training and are extremely easy to use
+	- Combine data from a variety of systems into a single, summarized, unified view of the business
+	- Enable drill-down or drill-through to underlying data sources or reports 
+	- Present a dynamic, real-world view with timely data
+	- Require little coding to implement, deploy and maintain
+### Best Practices in Dashboard Design
+- Benchmark KPIs with Industry Standards
+- Wrap the metrics with contextual metadata
+- Validate the Design by a usability specialist
+- Prioritize and rank alerts and exceptions
+- Enrich dashboard with business-user comments
+- present information in three different levels
+- pick the right visual constructs
+- provide for guided analytics
+### Analytics in Action
+> Increasing the Efficiency of Social Media Campaign Reporting to get Insights Quicker
+
+- Motivation
+- Implementation
+	- Blending technologies for an automated, bespoke and branded reporting solution
+- Results
+	- Automatic data processing and increased reporting frequency
