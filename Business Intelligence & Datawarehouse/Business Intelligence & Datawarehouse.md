@@ -331,20 +331,20 @@
 - Replace dimension with subset of values
 - Dice operation often follows slice
 ![[Pasted image 20240925103611.png]]
-### Navigation Operators
+### 3.4.3 Navigation Operators
 - Operators for hierarchical dimensions 
 - Drill-down: add detail to a dimension 
 - Roll-up: remove detail from a dimension 
 - Distribute or recalculate measure values
-### Drill-down example
+### 3.4.4 Drill-down example
 ![[Pasted image 20240925103701.png]]
-### Pivot Operator
+### 3.4.5 Pivot Operator
 - Rotate or rearrange dimensions
 ![[Pasted image 20240925103725.png]]
-### Operator Summary
+### 3.4.6 Operator Summary
 ![[Pasted image 20240925103750.png]]
-# Lecture 4: The ETL Process
-## Why do we need a Data Warehouse
+# 4 Lecture 4: The ETL Process
+## 4.1 Why do we need a Data Warehouse
 - All information is in one place
 - Up-to-date information
 - Quick access
@@ -353,17 +353,17 @@
 - Easy to understand
 - Clear and uniform definitions
 - Standardized data
-## Data Marts
+## 4.2 Data Marts
 - To meet the specific needs of an organisation, a data mart may cover only a particular process and be limited to the boundaries of that process.
 	- You won't find employee absence information in a sales data mart, because a sales analyst doesn't need that information
 - However, there is no limitation to the amount or type of data that may be included in a data mart.
-## Start Schema Designing Principles
-### Surrogate Keys (primary key)
+## 4.3 Start Schema Designing Principles
+### 4.3.1 Surrogate Keys (primary key)
 - Single column key for each dimension table
 - Integer indexes are faster than char or datetime indexes
 - Enable the storage of multiple versions of an item where the item retains its original source key but is allotted a new surrogate key
 - Allow for dealing with optional relations, unknown values and irrelevant data
-### Naming and Type Conventions
+### 4.3.2 Naming and Type Conventions
 - All tables get a prefix
 	- STG_ = staging tables
 	- HIS_ = historical archive tables
@@ -373,12 +373,12 @@
 	- LKP_ = lookup tables
 - Meaningful names for columns
 - Avoid use of reserved words for database objects as tables
-### Granularity
+### 4.3.3 Granularity
 
 > The level of detail at which the data is stored in the data warehouse.
 
 - Store the data at the lowest level of detail possible
-### Fact table
+### 4.3.4 Fact table
 1. Identify the business process for analysis
 	- Sales
 	- Order processing
@@ -393,7 +393,7 @@
 	- Time, location, products, customers
 	- Filtering, grouping
 4. Identify facts for measurements
-### Two-Column Table Methodology
+### 4.3.5 Two-Column Table Methodology
 - Check if star schema is correct
 	- *Imaginary table* of our view to the fact measure from one particular dimension angle
 - First column represents category or dimensions
@@ -401,15 +401,15 @@
 - Consists of two types:
 	- One fact measure
 	- Multiple fact measure
-### One Fact Measure
+### 4.3.6 One Fact Measure
 - First column contains a category
 - Second column contains a statistical numerical figure
 ![[Pasted image 20241009083628.png]]
-### Multiple Fact Measure
+### 4.3.7 Multiple Fact Measure
 - Second column contains multiple facts F={F1, F2, F3, ...}
 - All F's must exist in all tables
 ![[Pasted image 20241009083724.png]]
-### A College Star Schema Tutorial
+### 4.3.8 A College Star Schema Tutorial
 | **E/R Diagram**                                                                                                                                                                    | **Star Schema**                                                                                                                                                                                                                                            |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Used as operational system to support operational procedures                                                                                                                       | Used for analysis purposes                                                                                                                                                                                                                                 |
@@ -418,13 +418,13 @@
 ![[Pasted image 20241009084259.png]]
 ![[Pasted image 20241009092432.png]]
 ![[A College Star Schema Tutorial.pdf]]
-### Case Study Summary
+### 4.3.9 Case Study Summary
 - 3 ways to create dimension tables:
 	- Use create table as `select *
 	- this directly copies from the table in the operational database
 - Choose selected attributes from the table in the operational database
 - Create the dimension table manually, followed by `insert into insert` new records into the table
-### Summary on facts and dimensions
+### 4.3.10 Summary on facts and dimensions
 - Fact: Fact is numerical and aggregated value
 - Dimension: Point of view
 - Creating Dimension Tables:
@@ -434,20 +434,20 @@
 - Creating Fact Tables:
 	- -Direct retrieval from the tables in the operational database
 - To validate, the two-column method can be used
-## ETL Process
+## 4.4 ETL Process
 ![[Pasted image 20241009091853.png]]
-### ETL Process
+### 4.4.1 ETL Process
 - ETL stands for:
 	- Extraction: Collect the data from heterogenous data sources 
 	- Transformation: transform, clean, and standardize the data such that it can be integrated in the same data warehouse 
 	- Loading: consists of loading the data to the data warehouse
 - Data staging area: the part of the data warehouse where transformations happen
 - Staging area should not be available for querying
-### General Data Warehouse Architecture
+### 4.4.2 General Data Warehouse Architecture
 ![[Pasted image 20241009092847.png]]
-### Data Integration and the Extraction, Transformation and Load Process
+### 4.4.3 Data Integration and the Extraction, Transformation and Load Process
 ![[Pasted image 20241009092923.png]]
-### ETL (Extract, Transform, Load)
+### 4.4.4 ETL (Extract, Transform, Load)
 - Issues affecting the purchase of an ETL Tool
 	- expensive
 	- steep learning curve
@@ -456,16 +456,53 @@
 	- Automatic capturing and delivery of metadata
 	- History of conforming to open standards
 	- Easy-to-use interface
-### Staging Area
+### 4.4.5 Staging Area
 - Where extracted data is stored and possibly transformed before loading the data into the central warehouse
 	- source system load times should be kept to minimum
 	- using separate staging area enables you to work on a specific subset of the data
 	- dedicated schema allows for specific sorting or indexing to further optimise and support the ETL process
 	- safety net: process can fail before completing
-## Tutorial on Spoon
-### Objective: Building coffeemerchant Data Warehouse Using Spoon PDI
+## 4.5 Tutorial on Spoon
+### 4.5.1 Objective: Building coffeemerchant Data Warehouse Using Spoon PDI
 ![[Pasted image 20241009103043.png]]
-## Assignment
-### Creating the Data Warehouse Using Spoon
+## 4.6 Assignment
+### 4.6.1 Creating the Data Warehouse Using Spoon
 
-... I gave up sorry
+# 5 There's a little gap...
+
+# 6 OLAP - OLTP
+## 6.1 OLAP
+> “The dynamic synthesis, analysis, and consolidation of large volumes of multi- dimensional data”
+
+- There are five OLAP operations: 
+	- Slicing 
+	- Pivoting 
+	- Dicing 
+	- Drilling
+	- Roll up
+### 6.1.1 A Data Journey: from operational to analytics
+![[Pasted image 20241030082529.png]]
+### 6.1.2 Data cube:
+- Dimensional model, but often presented as a cube
+### 6.1.3 Star schema and data cube
+- Data cube:
+![[Pasted image 20241030082639.png]]
+- Same model as star scheme:
+![[Pasted image 20241030082658.png]]
+### 6.1.4 Slicing
+- Slicing = filtering
+![[Pasted image 20241030082743.png]]
+> Slice. A slice is a subset of a multidimensional array (usually a two-dimensional representation) corresponding to a single value set for one (or more) of the dimensions not in the subset
+
+### 6.1.5 Pivoting
+> Pivot. This is used to change the dimensional orientation of a report or ad hoc query-page display
+
+![[Pasted image 20241030082828.png]]
+### 6.1.6 Dicing
+![[Pasted image 20241030082905.png]]
+### 6.1.7 Drill Down/Up
+> Drilling down or up is a specific OLAP technique whereby the user navigates among levels of data ranging from the most summarized (up) to the most detailed (down).
+
+![[Pasted image 20241030083002.png]]
+### Roll-up
+![[Pasted image 20241030083040.png]]
